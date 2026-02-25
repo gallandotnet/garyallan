@@ -4,77 +4,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gary Allan | Engineering Leader & Backend Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px 20px; background: #fff; }
-        header { border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 40px; }
-        h1 { margin-bottom: 5px; color: #000; }
-        h2 { border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 40px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0; }
-        .card { border: 1px solid #eee; padding: 20px; border-radius: 8px; }
-        .principal { border-top: 5px solid #ffcc00; background: #fffdf5; }
-        .contractor { border-top: 5px solid #0056b3; background: #f8fbff; }
-        .charity { border-top: 5px solid #28a745; background: #f4fdf6; }
-        .toolbox { background: #f9f9f9; padding: 20px; border-radius: 8px; }
-        footer { margin-top: 60px; font-size: 0.9em; color: #666; text-align: center; }
-        a { color: #0056b3; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        :root {
+            --primary: #0056b3;
+            --cba-gold: #ffcc00;
+            --charity-green: #2d6a4f;
+            --text: #333;
+            --bg: #fdfdfd;
+        }
+        body { 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text); 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            background: var(--bg); 
+        }
+        header { 
+            text-align: center; 
+            padding-bottom: 40px; 
+            border-bottom: 1px solid #eee; 
+            margin-bottom: 40px;
+        }
+        h1 { margin-bottom: 5px; font-size: 2.5em; color: #000; letter-spacing: -1px; }
+        .subtitle { font-size: 1.2em; color: var(--primary); font-weight: 600; margin-bottom: 15px; }
+        
+        /* Justified Intro Section */
+        .intro-text {
+            text-align: justify;
+            max-width: 750px;
+            margin: 0 auto 50px;
+            font-size: 1.15em;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 25px; 
+            margin: 30px 0; 
+        }
+        
+        .card { 
+            background: #fff;
+            padding: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        
+        .card i { font-size: 2em; margin-bottom: 15px; display: block; }
+        
+        .principal { border-top: 6px solid var(--cba-gold); }
+        .contractor { border-top: 6px solid var(--primary); }
+        
+        .stack-section { 
+            background: #f8f9fa; 
+            padding: 35px; 
+            border-radius: 12px; 
+            margin: 40px 0;
+            border-left: 8px solid var(--primary);
+        }
+        
+        .stack-section h2 { margin-top: 0; color: var(--primary); font-size: 1.5em; }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 20px 0 50px;
+        }
+
+        .charity-footer { 
+            background: #f0f7f4; 
+            padding: 30px; 
+            border-radius: 12px; 
+            border-top: 6px solid var(--charity-green);
+            margin-top: 40px;
+        }
+        .charity-footer i { font-size: 1.8em; color: var(--charity-green); margin-bottom: 10px; display: block; }
+
+        footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; color: #777; font-size: 0.9em; }
+        
+        nav a { margin: 0 15px; color: var(--primary); text-decoration: none; font-weight: 600; font-size: 1.1em; }
+        nav a:hover { text-decoration: underline; }
+
+        @media (max-width: 600px) {
+            .philosophy-grid { grid-template-columns: 1fr; }
+            .intro-text { text-align: left; } /* Justify often looks messy on small mobile screens */
+        }
     </style>
 </head>
 <body>
 
     <header>
         <h1>Gary Allan</h1>
-        <p><strong>Engineering Leader & Backend Systems Specialist</strong></p>
+        <p class="subtitle">Engineering Leader & Backend Systems Specialist</p>
         <nav>
-            <a href="mailto:garyallan.net@gmail.com">Email</a> | 
-            <a href="https://linkedin.com/in/garyallan">LinkedIn</a>
+            <a href="mailto:garyallan.net@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://linkedin.com/in/garyallan"><i class="fab fa-linkedin"></i> LinkedIn</a>
         </nav>
     </header>
 
-    <section>
-        <p>I am a Melbourne-based engineer with extensive experience delivering and operating large-scale systems for organizations like <strong>Coles, Bupa, ANZ, and NAB</strong>. I specialize in bridging the gap between technical strategy and hands-on execution, with a focus on building resilient, integration-heavy platforms.</p>
+    <section class="intro-text">
+        <p>Extensive experience delivering and operating large-scale systems for <strong>Coles, Bupa, ANZ, and NAB</strong>. I specialize in bridging technical strategy with hands-on execution to build resilient, integration-heavy platforms.</p>
     </section>
 
     <div class="grid">
         <div class="card principal">
+            <i class="fas fa-chess-knight" style="color: var(--cba-gold);"></i>
             <h3>Strategic Leadership</h3>
             <p>Directing technical roadmaps, modernizing legacy platforms, and providing architectural direction for regulated enterprise environments.</p>
         </div>
 
         <div class="card contractor">
+            <i class="fas fa-code" style="color: var(--primary);"></i>
             <h3>Technical Delivery</h3>
-            <p>Hands-on Specialist in <strong>.NET, Azure APIM, and SQL Server</strong>. High-autonomy, low-friction contribution to complex codebases.</p>
+            <p>Hands-on Specialist in <strong>.NET, Azure APIM, and SQL Server</strong>. High-autonomy contribution to complex, mission-critical codebases.</p>
         </div>
     </div>
 
-    <section class="toolbox">
-        <h2>Technical Toolbox</h2>
-        <p><strong>Frameworks:</strong> .NET (Core, 5+, Framework), ASP.NET Core, Web API, LINQ, WCF.</p>
-        <p><strong>Cloud & DevOps:</strong> Azure (APIM, Functions, Service Bus), Terraform, CI/CD Pipelines, Git.</p>
-        <p><strong>Data & Integration:</strong> SQL Server (Expert T-SQL & Performance Tuning), Entity Framework Core, Oracle.</p>
+    <section class="stack-section">
+        <h2><i class="fas fa-layer-group"></i> Engineering Stack</h2>
+        <p><strong>Backend Architecture:</strong> .NET, Web API, Legacy - WCF,XML.</p>
+        <p><strong>Cloud & Integration:</strong> Azure (APIM, Functions, Service Bus, Event Grid), Terraform, CI/CD Pipelines.</p>
+        <p><strong>Data & Reliability:</strong> SQL Server (T-SQL & Tuning), Entity Framework Core, Oracle.</p>
     </section>
 
     <section>
-        <h2>How I Work with Teams</h2>
-        <div class="grid" style="grid-template-columns: 1fr 1fr;">
+        <h2><i class="fas fa-users-gear"></i> How I Work with Teams</h2>
+        <div class="philosophy-grid">
             <div>
-                <h3>A "Safe to Speak Up" Culture</h3>
-                <p>The best outcomes happen when people feel comfortable questioning ideas. I make sure everyone on the team feels safe to challenge the status quo or admit when they're stuck. We learn from mistakes as a team rather than looking for someone to blame.</p>
+                <h4>Safe to Speak Up</h4>
+                <p>The best outcomes happen when people feel comfortable questioning ideas. I ensure everyone feels safe to challenge the status quo or admit when they're stuck. We learn from mistakes as a team rather than looking for someone to blame.</p>
             </div>
             <div>
-                <h3>Clearing the Path</h3>
-                <p>I practice servant leadership by handling the roadblocks and the background noise. My goal is to keep the path clear so the team can stay in the flow and focus on building great experiences for our users.</p>
+                <h4>Clearing the Path</h4>
+                <p>I practice servant leadership by handling the roadblocks and the background noise. My goal is to keep the path clear so the team can focus on building great experiences for our users.</p>
             </div>
         </div>
     </section>
 
-    <section class="card charity">
-        <h3>Advisory & Charity Offer</h3>
-        <p>I offer pro-bono architectural advice and engineering mentorship for non-profits and community-driven projects. If you're building something that helps people, I'd love to help you get it across the line.</p>
+    <section class="charity-footer">
+        <i class="fas fa-paw"></i>
+        <h3>Advisory & Animal Welfare</h3>
+        <p>I am passionate about using my skills to give back to the community, specifically in the area of <strong>animal welfare</strong>. I offer pro-bono architectural advice and engineering mentorship for rescue groups and non-profits. If you are building something to help animals, I'd love to help you clear the technical hurdles.</p>
     </section>
 
     <footer>
-        <p>© 2026 Gary Allan | Focused on reliability, simplicity, and team success.</p>
+        <p>© 2026 Gary Allan | Focused on reliability, purpose, and team success.</p>
     </footer>
 
 </body>
